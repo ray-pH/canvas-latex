@@ -77,7 +77,7 @@ export default class PixiJS extends PIXI.Container {
    * @param  {?String} [latex=''] The string to render
    */
   set latex (latex = '') {
-    this.removeChildren()
+    this.removeChildren().forEach(child => child.destroy(true))
     this._latex = latex
     this._render()
   }
